@@ -48,7 +48,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = (
+INSTALLED_APPS_0 = (
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,11 +58,13 @@ INSTALLED_APPS = (
 )
 
 # Esto de crea de nuevo
-LOCAL_APPS =()
+LOCAL_APPS =(
+    'applications.users',
+)
 
 THIRD_PARTY_APPS =() #Para alicaciones de terceros
 
-INSTALLED_APPS = INSTALLED_APPS+ LOCAL_APPS+THIRD_PARTY_APPS
+INSTALLED_APPS = INSTALLED_APPS_0+ LOCAL_APPS+THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -113,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
+AUTH_USER_MODEL = 'users.User' # Indiación de dónde se encuentra elmodelo de usuarios en esta aplicación
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
